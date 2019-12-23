@@ -6,8 +6,21 @@
       <router-link to="/registration">Register</router-link>|
     </div>
     <router-view />
+    <navbar></navbar>
   </div>
 </template>
+
+<script>
+import navbar from "./components/Navbar";
+
+export default {
+  name: "home",
+  components: {
+    navbar
+  }
+};
+</script>
+
 
 <style lang="stylus">
 @import 'assets/index.css';
