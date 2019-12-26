@@ -8,18 +8,19 @@ const routes = [
   {
     path: "/",
     name: "home",
+    meta: { layout: "mainLayout" },
     component: Home
   },
   {
     path: "/login",
     name: "login",
-    meta: { layout: "empty" },
+    meta: { layout: "authLayout" },
     component: () => import("../views/Login.vue")
   },
   {
     path: "/registration",
     name: "registration",
-    meta: { layout: "empty" },
+    meta: { layout: "authLayout" },
     component: () => import("../views/Registration.vue")
   }
 ];

@@ -1,22 +1,35 @@
 <template>
   <div id="app">
+    <component :is="layout">
+      <router-view />
+    </component>
+
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/registration">Register</router-link>|
     </div>
-    <router-view />
+
     <navbar></navbar>
   </div>
 </template>
 
 <script>
 import navbar from "./components/Navbar";
+import authLayout from "@/layouts/authLayout";
+import mainLayout from "@/layouts/mainLayout";
 
 export default {
   name: "home",
   components: {
-    navbar
+    navbar,
+    authLayout,
+    mainLayout
+  },
+  computed: {
+    layout() {
+      return this.$route.meta.layout || "authLayout";
+    }
   }
 };
 </script>
