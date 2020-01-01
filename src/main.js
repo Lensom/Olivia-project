@@ -4,11 +4,14 @@ import router from "./router";
 import store from "./store";
 import Vuelidate from 'vuelidate'
 import "./registerServiceWorker";
+import "materialize-css/dist/js/materialize.min"
+import messagesPlugin from "@/utils/messagesPlugin"
 
 import firebase from 'firebase/app'
 import "firebase/auth"
 import "firebase/database"
 
+Vue.use(messagesPlugin)
 Vue.config.productionTip = false;
 Vue.use(Vuelidate)
 

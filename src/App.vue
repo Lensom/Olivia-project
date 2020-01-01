@@ -36,6 +36,7 @@ export default {
 
 
 <style lang="stylus">
+@import '~materialize-css/dist/css/materialize.min.css';
 @import 'assets/index.css';
 
 #app {
