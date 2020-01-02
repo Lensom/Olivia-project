@@ -1,5 +1,5 @@
 <template>
-  <div class="form__body">
+  <div class="grey darken-1 form__body">
     <router-view />
   </div>
 </template>
@@ -14,7 +14,6 @@ export default {
   },
   watch: {
     error(fbError) {
-      console.log(fbError);
       this.$error(messages[fbError.code] || "Что-то пошло не так");
     }
   }
