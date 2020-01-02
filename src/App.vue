@@ -36,15 +36,16 @@ export default {
 
 
 <style lang="stylus">
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import '~materialize-css/dist/css/materialize.min.css';
+@import '~material-icons/iconfont/material-icons.css';
 @import 'assets/index.css';
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

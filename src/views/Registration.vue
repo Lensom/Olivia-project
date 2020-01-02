@@ -8,6 +8,7 @@
           id="email"
           type="text"
           class="form__input"
+          placeholder="Email"
         />
         <small
           class="form__helper invalid"
@@ -25,11 +26,12 @@
           class="form__input"
           v-model.trim="password"
           :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
+          placeholder="Пароль"
         />
         <small
           class="form__helper invalid"
           v-if="$v.password.$dirty && !$v.password.required"
-        >Введите Password</small>
+        >Введите пароль</small>
         <small
           class="form__helper invalid"
           v-else-if="$v.password.$dirty && !$v.password.minLength"
@@ -41,6 +43,7 @@
           type="text"
           class="form__input"
           :class="{invalid: ($v.name.$dirty && !$v.name.required)}"
+          placeholder="Ваше Имя"
         />
         <small
           class="form__helper invalid"
@@ -54,7 +57,10 @@
         </label>
       </div>
       <div class="form__submit-wrapper">
-        <button type="submit">Submit</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Submit
+          <i class="material-icons right">send</i>
+        </button>
       </div>
       <p>
         Есть аккаунт?

@@ -1,3 +1,78 @@
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  margin: 0;
+  height: 35px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255,255,255,.2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 15px 8px;
+  color: white;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  background: rgba(16,89,255, 1);
+}
+.btn:hover {
+  background: rgba(16,89,255, 1);
+}
+.btn:focus {
+  background: rgba(3, 20, 133);
+}
+
+.btn i {
+  font-size: 24px;
+}
+
+.form__body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__auth-wrapper {
+  width: 100%;
+  max-width: 360px;
+  padding: 40px 15px 20px;
+  border-radius: 6px;
+  background: linear-gradient(
+    rgba(35,43,85,0.75),
+    rgba(35,43,85,0.95)),
+    url(https://images.unsplash.com/photo-1490100886609-e401a775fb3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80) no-repeat center center
+}
+
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form__submit-wrapper {
+  margin: 35px 0;
+}
+
+.form__helper {
+  position: absolute;
+  left: 15px;
+  bottom: -18px;
+}
+
+.form__auth p{
+  color: white;
+}
+
 .invalid {
-  border: 1px solid red;
+  color: red;
 }

@@ -8,6 +8,7 @@
           id="email"
           type="text"
           class="form__input"
+          placeholder="Email"
         />
         <small
           class="form__helper invalid"
@@ -24,19 +25,23 @@
           type="password"
           class="form__input"
           v-model.trim="password"
+          placeholder="Password"
           :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
         />
         <small
           class="form__helper invalid"
           v-if="$v.password.$dirty && !$v.password.required"
-        >Введите Password</small>
+        >Введите Пароль</small>
         <small
           class="form__helper invalid"
           v-else-if="$v.password.$dirty && !$v.password.minLength"
         >Пароль должен быть не менее {{$v.password.$params.minLength.min}} символов. Сейчас он {{password.length}}</small>
       </div>
       <div class="form__submit-wrapper">
-        <button type="submit">Submit</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Submit
+          <i class="material-icons right">send</i>
+        </button>
       </div>
       <p>
         <router-link to="/registration">Регистрация</router-link>
