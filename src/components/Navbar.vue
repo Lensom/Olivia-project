@@ -11,7 +11,7 @@
       <ul class="right hide-on-small-and-down">
         <li>
           <a class="dropdown-trigger black-text" href="#" data-target="dropdown" ref="dropdown">
-            USER NAME
+            {{name}}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 
@@ -47,14 +47,19 @@ export default {
       this.$router.push("/login?message=logout");
     }
   },
-  mounted() {
-    this.interval = setInterval(() => {
-      this.date = new Date();
-    }, 1000);
-    // this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-    //   constrainWidth: false
-    // });
+  computed: {
+    name() {
+      return this.$store.getters.info.name;
+    }
   },
+  // mounted() {
+  //   this.interval = setInterval(() => {
+  //     this.date = new Date();
+  //   }, 1000);
+  //   this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
+  //     constrainWidth: false
+  //   });
+  // },
   beforeDestroy() {
     clearInterval(this.interval);
     if (this.dropdown && this.dropdown.destroy) {
