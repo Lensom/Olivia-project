@@ -49,17 +49,22 @@ export default {
   },
   computed: {
     name() {
+      console.log(this.$store.getters.info.name);
       return this.$store.getters.info.name;
     }
   },
-  // mounted() {
-  //   this.interval = setInterval(() => {
-  //     this.date = new Date();
-  //   }, 1000);
-  //   this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-  //     constrainWidth: false
-  //   });
-  // },
+  mounted() {
+    console.log("this M" + M);
+    // M.Dropdown.init(this.$refs.dropdown, {
+    //   constrainWidth: true
+    // });
+    // this.interval = setInterval(() => {
+    //   this.date = new Date();
+    // }, 1000);
+    // this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
+    //   constrainWidth: false
+    // });
+  },
   beforeDestroy() {
     clearInterval(this.interval);
     if (this.dropdown && this.dropdown.destroy) {

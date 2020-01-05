@@ -1,10 +1,11 @@
 import Vue from "vue";
+import Vuelidate from 'vuelidate';
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import Vuelidate from 'vuelidate'
 import "./registerServiceWorker";
 import messagesPlugin from "@/utils/messagesPlugin"
+import Loader from '@/components/Loader'
 import "materialize-css/dist/js/materialize.min"
 
 import firebase from 'firebase/app'
@@ -14,6 +15,7 @@ import "firebase/database"
 Vue.use(messagesPlugin)
 Vue.config.productionTip = false;
 Vue.use(Vuelidate)
+Vue.component('Loader', Loader)
 
 
 firebase.initializeApp({
