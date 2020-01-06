@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    console.log("this M" + M);
+    // console.log("this M" + M);
     // M.Dropdown.init(this.$refs.dropdown, {
     //   constrainWidth: true
     // });
