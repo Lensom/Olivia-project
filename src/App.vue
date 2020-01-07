@@ -7,21 +7,19 @@
 </template>
 
 <script>
-import navbar from "./components/Navbar";
 import authLayout from "@/layouts/authLayout";
 import mainLayout from "@/layouts/mainLayout";
 
 export default {
   name: "home",
-  components: {
-    navbar,
-    authLayout,
-    mainLayout
-  },
   computed: {
     layout() {
       return this.$route.meta.layout || "authLayout";
     }
+  },
+  components: {
+    authLayout,
+    mainLayout
   }
 };
 </script>

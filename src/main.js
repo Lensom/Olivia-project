@@ -3,19 +3,25 @@ import Vuelidate from 'vuelidate';
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "./registerServiceWorker";
 import messagesPlugin from "@/utils/messagesPlugin"
-import Loader from '@/components/Loader'
+import currencyFilter from '@/filters/currency.filter'
+import dateFilter from '@/filters/date.filter'
+
+import Loader from '@/components/app/Loader'
+import "./registerServiceWorker";
 import "materialize-css/dist/js/materialize.min"
 
 import firebase from 'firebase/app'
 import "firebase/auth"
 import "firebase/database"
 
-Vue.use(messagesPlugin)
 Vue.config.productionTip = false;
+
+Vue.use(messagesPlugin)
 Vue.use(Vuelidate)
 Vue.component('Loader', Loader)
+Vue.filter('currency', currencyFilter)
+Vue.filter('date', dateFilter)
 
 
 firebase.initializeApp({
@@ -27,7 +33,7 @@ firebase.initializeApp({
   messagingSenderId: "611066505275",
   appId: "1:611066505275:web:e8bd502381c56f5330541e",
   measurementId: "G-XZLMH43GKL"
-})
+});
 
 let app;
 

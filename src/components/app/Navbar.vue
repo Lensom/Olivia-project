@@ -5,7 +5,7 @@
         <a href="#" @click.prevent="$emit('click')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <!-- <span class="black-text">{{ date | date("datetime") }}</span> -->
+        <span class="black-text">{{date | date('datetime')}}</span>
       </div>
 
       <ul class="right hide-on-small-and-down">
@@ -34,6 +34,7 @@
   </nav>
 </template>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
 <script>
 export default {
   data: () => ({
@@ -49,18 +50,13 @@ export default {
   },
   computed: {
     name() {
-      console.log(this.$store.getters.info.name);
       return this.$store.getters.info.name;
     }
   },
   mounted() {
-    // console.log("this M" + M);
-    // M.Dropdown.init(this.$refs.dropdown, {
-    //   constrainWidth: true
-    // });
-    // this.interval = setInterval(() => {
-    //   this.date = new Date();
-    // }, 1000);
+    this.interval = setInterval(() => {
+      this.date = new Date();
+    }, 1000);
     // this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
     //   constrainWidth: false
     // });
