@@ -15,6 +15,10 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   color: white;
 }
 
+.input-field input {
+  color: black !important;
+}
+
 /* Change the white to any color ;) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
