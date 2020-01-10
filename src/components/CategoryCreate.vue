@@ -15,8 +15,8 @@
           />
           <label for="name">Название</label>
           <span
-            class="helper-text invalid"
             v-if="$v.title.$dirty && !$v.title.required"
+            class="helper-text invalid"
           >Введите название категории</span>
         </div>
 
@@ -29,9 +29,9 @@
           />
           <label for="limit">Лимит</label>
           <span
-            class="helper-text invalid"
             v-if="$v.limit.$dirty && !$v.limit.minValue"
-          >Минимальное значение {{$v.limit.$params.minValue.min}}</span>
+            class="helper-text invalid"
+          >Минимальная значение {{$v.limit.$params.minValue.min}}</span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
@@ -42,6 +42,8 @@
     </div>
   </div>
 </template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
 
 <script>
 import { required, minValue } from "vuelidate/lib/validators";
@@ -56,8 +58,7 @@ export default {
     limit: { minValue: minValue(100) }
   },
   mounted() {
-    // M.updateTextFields();
-    // M not found
+    M.updateTextFields();
   },
   methods: {
     async submitHandler() {
@@ -76,9 +77,7 @@ export default {
         this.$v.$reset();
         this.$message("Категория была создана");
         this.$emit("created", category);
-      } catch (e) {
-        console.log(e);
-      }
+      } catch (e) {}
     }
   }
 };
