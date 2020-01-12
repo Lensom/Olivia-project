@@ -7,35 +7,23 @@
 </template>
 
 <script>
-import authLayout from "@/layouts/authLayout";
-import mainLayout from "@/layouts/mainLayout";
-
+import EmptyLayout from "@/layouts/EmptyLayout";
+import MainLayout from "@/layouts/MainLayout";
 export default {
-  name: "home",
   computed: {
     layout() {
-      return this.$route.meta.layout || "authLayout";
+      return (this.$route.meta.layout || "empty") + "-layout";
     }
   },
   components: {
-    authLayout,
-    mainLayout
+    EmptyLayout,
+    MainLayout
   }
 };
 </script>
 
 
-<style lang="stylus">
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import '~materialize-css/dist/css/materialize.min.css';
-@import '~material-icons/iconfont/material-icons.css';
-@import 'assets/index.css';
-
-#app {
-  font-family: 'Roboto', 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss">
+@import "~materialize-css/dist/css/materialize.min.css";
+@import "assets/index.css";
 </style>

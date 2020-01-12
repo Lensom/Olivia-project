@@ -1,11 +1,12 @@
 <template>
-  <div class="grey darken-1 form__body">
+  <div class="grey darken-1 empty-layout">
     <router-view />
   </div>
 </template>
 
 <script>
 import messages from "@/utils/messages";
+
 export default {
   computed: {
     error() {
@@ -17,6 +18,5 @@ export default {
       this.$error(messages[fbError.code] || "Что-то пошло не так");
     }
   }
-  // В эти layouts мы выносим общие блоки на страницах Login и Registration
 };
 </script>

@@ -1,10 +1,11 @@
 <template>
   <div>
     <Loader v-if="loading" />
-    <div v-else class="app__wrapper">
+    <div class="app-main-layout" v-else>
       <Navbar @click="isOpen = !isOpen" />
 
       <Sidebar v-model="isOpen" />
+
       <main class="app-content" :class="{full: !isOpen}">
         <div class="app-page">
           <router-view />

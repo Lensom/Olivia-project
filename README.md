@@ -1,4 +1,4 @@
-# olivia
+# vue-youtube
 
 ## Project setup
 ```

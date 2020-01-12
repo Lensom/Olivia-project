@@ -34,7 +34,7 @@
   </nav>
 </template>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+
 <script>
 export default {
   data: () => ({
@@ -57,7 +57,6 @@ export default {
     this.interval = setInterval(() => {
       this.date = new Date();
     }, 1000);
-
     this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
       constrainWidth: false
     });
