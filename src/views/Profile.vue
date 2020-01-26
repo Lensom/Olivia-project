@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Профиль</h3>
+      <h3>{{'ProfileTitle' | localize}}</h3>
     </div>
 
     <form class="form" @submit.prevent="submitHandler">
@@ -12,8 +12,11 @@
           v-model="name"
           :class="{invalid: $v.name.$dirty && !$v.name.required}"
         />
-        <label for="description">Имя</label>
-        <small class="helper-text invalid" v-if="$v.name.$dirty && !$v.name.required">Введите имя</small>
+        <label for="description">{{'Name'|localize}}</label>
+        <small
+          class="helper-text invalid"
+          v-if="$v.name.$dirty && !$v.name.required"
+        >{{'Message_EnterName'|localize}}</small>
       </div>
 
       <div class="switch">
@@ -26,7 +29,7 @@
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Обновить
+        {{'Update'|localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>
@@ -65,13 +68,14 @@ export default {
       try {
         await this.updateInfo({
           name: this.name,
-          locale: this.isRuLocale ? "ru-RU" : "en-ES"
+          locale: this.isRuLocale ? "ru-RU" : "en-US"
         });
       } catch (e) {}
     }
   }
 };
 </script>
+
 
 <style scoped>
 .switch {
