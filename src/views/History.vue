@@ -38,6 +38,11 @@ import { Pie } from "vue-chartjs";
 import localizeFilter from "@/filters/localize.filter";
 
 export default {
+  metaInfo() {
+    return {
+      title: this.$title("Menu_History")
+    };
+  },
   name: "history",
   metaInfo() {
     return {
